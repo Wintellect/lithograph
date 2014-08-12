@@ -1,0 +1,37 @@
+<div data-pl-entity="ctrl.parentObj" data-on-loaded="ctrl.publish()">
+    <p>Hello my name is <span data-pl-prop-name="name">Josh</span></p>
+    <p data-pl-prop-name="age" data-pl-prop-val="33">I am a programmer who is 33 years old</p>
+    <div>
+        <p data-pl-entity="ctrl.parentObj.primaryInterest">
+            My primary interest is <strong data-pl-prop-name="name">God</strong>
+            and takes <span data-pl-prop-name="priority" data-pl-prop-val="10">top</span> priority in his life.
+        </p>
+        <p>However, I also has many other interests:</p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Priority</th>
+            </tr>
+            </thead>
+            <tbody data-pl-entity="ctrl.parentObj.interests" data-pl-is-collection="true">
+            <tr data-pl-item>
+                <td data-pl-prop-name="name">Wife</td>
+                <td data-pl-prop-name="priority">9</td>
+            </tr>
+            <tr data-pl-item>
+                <td data-pl-prop-name="name">Kids</td>
+                <td data-pl-prop-name="priority">8</td>
+            </tr>
+            <tr data-pl-item>
+                <td data-pl-prop-name="name">Church</td>
+                <td data-pl-prop-name="priority">7</td>
+            </tr>
+            <tr data-pl-item>
+                <td data-pl-prop-name="name">Programming</td>
+                <td data-pl-prop-name="priority">6</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

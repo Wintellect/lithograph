@@ -1,0 +1,18 @@
+<div data-pl-entity="ctrl.parentObj" data-on-loaded="ctrl.publish()">
+    <p>This is an <strong data-pl-prop-name="name">entity</strong> that has nested objects as properties.</p>
+    <div data-pl-entity="ctrl.parentObj.person">
+        <p>For instance the following list encodes a <strong>person</strong> object</p>
+        <p>Some are encoded with explicit values using <code>data-ps-prop-val</code>, while others pull their
+        values directly from the text node of an element.</p>
+        <ul>
+            <li data-pl-prop-name="age" data-ps-prop-val="33">Age: 33</li>
+            <li>Name: <span data-pl-prop-name="name">Josh</span>
+
+                <ul data-pl-entity="ctrl.parentObj.person.address">
+                    <li data-pl-prop-name="line1">555 Main St.</li>
+                    <li><span data-pl-prop-name="city">Smallville</span>, <span data-pl-prop-name="state">TN</span> <span data-pl-prop-name="zip">37933</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

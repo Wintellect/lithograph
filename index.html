@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+</head>
+
+<body ng-app="angular-seo">
+<div class="container">
+
+    <div ng-include="'partials/menu.html'"></div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Markup</h2>
+            <ng-view></ng-view>
+        </div>
+        <div class="col-md-6">
+            <h2>Result</h2>
+            <pre data-ng-controller="dataListenerCtrl as ctrl">{{ctrl.data | json}}</pre>
+        </div>
+    </div>
+    <!-- Site footer -->
+    <div class="footer">
+        <p>by                     <a href="http://www.technofattie.com">Techno Fattie</a>
+        </p>
+    </div>
+</div>
+</body>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="js/app.js"></script>
+<script src="js/data-controllers.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/entity-set-directive.js"></script>
+</html>
