@@ -27,6 +27,10 @@
       {
         'title':'Deep Nesting',
         'link':'/deep-nesting'
+      },
+      {
+        'title':'HTML as Value',
+        'link':'/html-as-value'
       }
     ];
   };

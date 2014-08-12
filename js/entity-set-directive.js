@@ -131,13 +131,25 @@
   };
 
   var EntityPropertyDirective = function () {
+    function getVal(elem, attrs){
+      var type = attrs.plType || 'text',
+          valAccessor = elem[type];
+
+      if(!angular.isFunction(valAccessor)){
+        valAccessor = elem.text;
+      }
+
+      return attrs.plPropVal || valAccessor.call(elem);
+    }
+
     return {
       restrict: 'A',
       require: '^plEntity',
       link: function (scope, elem, attrs, esCtrl) {
+
         esCtrl.addPropertyToCurrentEntity(
           attrs.plPropName,
-          attrs.plPropVal || elem.text()
+          getVal(elem, attrs)
         );
       }
     }

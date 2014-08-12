@@ -32,6 +32,11 @@
           controller:'dataPublishCtrl',
           controllerAs:'ctrl'
         })
+        .when('/html-as-value', {
+          templateUrl: 'partials/html-as-value.html',
+          controller:'dataPublishCtrl',
+          controllerAs:'ctrl'
+        })
         .otherwise({
           redirectTo: '/'
         });
