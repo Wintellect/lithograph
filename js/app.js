@@ -4,8 +4,8 @@
 (function () {
   'use strict';
 
-  angular.module('angular-seo', ['ngRoute'])
-    .config(['$routeProvider', function ($routeProvider) {
+  angular.module('lithograph', ['ngRoute'])
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
       $routeProvider
         .when('/', {
           templateUrl: 'partials/basic-entity.html',
@@ -35,6 +35,8 @@
         .otherwise({
           redirectTo: '/'
         });
+
+      $locationProvider.html5Mode(true);
     }]);
 
 }());

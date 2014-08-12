@@ -1,12 +1,58 @@
 <div data-pl-entity="ctrl.parentObj" data-on-loaded="ctrl.publish()">
-    <p>This table's rows encode a collection of data which is used to populate an array.</p>
-    <ul class="table" data-pl-entity="ctrl.parentObj.collection" data-pl-is-collection="true">
+    <p>This set of lists encodes a deeply nested hierarchy of objects.</p>
+    <ul class="table" data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
         <li data-pl-item>
             Name: <span data-pl-prop-name="name">object1</span>
             Children:
-            <ul data-pl-entity="$current.children">
-                <li></li>
-                <li></li>
+            <ul data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
+                <li data-pl-item>
+                    <p data-pl-prop-name="name" data-pl-prop-val="Item1">Name: Item1</p>
+                    <ul class="table" data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
+                        <li data-pl-item>
+                            Name: <span data-pl-prop-name="name">object1</span>
+                            Children:
+                            <ul data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
+                                <li data-pl-item>
+                                    <p data-pl-prop-name="name" data-pl-prop-val="Item1">Name: Item1</p>
+                                    <ul class="table" data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
+                                        <li data-pl-item>
+                                            Name: <span data-pl-prop-name="name">object1</span>
+                                            Children:
+                                            <ul data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
+                                                <li data-pl-item>
+                                                    <p data-pl-prop-name="name" data-pl-prop-val="Item1">Name: Item1</p>
+                                                </li>
+                                                <li data-pl-item>
+                                                    <p data-pl-prop-name="name" data-pl-prop-val="Item2">Name: Item2</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li data-pl-item>
+                                    <p data-pl-prop-name="name" data-pl-prop-val="Item2">Name: Item2</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li data-pl-item>
+                    <p data-pl-prop-name="name" data-pl-prop-val="Item2">Name: Item2</p>
+                    <ul class="table" data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
+                        <li data-pl-item>
+                            Name: <span data-pl-prop-name="name">object1</span>
+                            Children:
+                            <ul data-pl-entity="$parent.$entity.children" data-pl-is-collection="true">
+                                <li data-pl-item>
+                                    <p data-pl-prop-name="name" data-pl-prop-val="Item1">Name: Item1</p>
+                                </li>
+                                <li data-pl-item>
+                                    <p data-pl-prop-name="name" data-pl-prop-val="Item2">Name: Item2</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>

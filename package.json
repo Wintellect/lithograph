@@ -1,0 +1,7 @@
+{
+  "name": "lithograph",
+  "version": "0.0.1",
+  "devDependencies": {
+    "express": "~4.8.3"
+  }
+}

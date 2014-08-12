@@ -58,6 +58,8 @@
               _this.isEntitySet = angular.isArray(val);
               expressionGetter.assign(_this.$scope, val);
             }
+
+            _this.$scope.$entity = expressionGetter(_this.$scope);
           }
         };
 
@@ -67,7 +69,9 @@
       var entity = this.entityAccessor.get();
 
       if (angular.isArray(entity)) {
-        entity.push({});
+        var newItem = {};
+        this.$scope.$entity = newItem;
+        entity.push(newItem);
       } else {
         this.$log.error("expression '" + this.$attrs.plEntity + "' does not evaluate to an array");
       }
@@ -95,6 +99,7 @@
     return {
       restrict: 'A',
       controller: EntityController,
+      scope:true,
       compile: function () {
         return {
           pre: function (scope, elem, attrs, ctrl) {
@@ -112,6 +117,7 @@
     return {
       restrict: 'A',
       require: '^plEntity',
+      scope:true,
       compile: function () {
         return {
           pre: function (scope, elem, attrs, esCtrl) {
@@ -137,7 +143,7 @@
     }
   };
 
-  angular.module('angular-seo')
+  angular.module('lithograph')
     .directive('plEntity', EntityDirective)
     .directive('plItem', EntitySetItemDirective)
     .directive('plPropName', EntityPropertyDirective);

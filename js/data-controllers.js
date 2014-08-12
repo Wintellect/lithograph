@@ -38,7 +38,7 @@
     }
   };
 
-  angular.module('angular-seo')
+  angular.module('lithograph')
     .controller('dataPublishCtrl', DataPublishCtrl)
     .controller('dataListenerCtrl', DataListenerCtrl);
 

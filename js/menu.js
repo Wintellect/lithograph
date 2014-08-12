@@ -6,6 +6,7 @@
 
   var MenuCtrl = function ($location) {
     this.$location = $location;
+    this.siteTitle = "Lithograph";
     this.menu = [
       {
         'title': 'Basic Entity',
@@ -25,7 +26,7 @@
       },
       {
         'title':'Deep Nesting',
-        'link':'deep-nesting'
+        'link':'/deep-nesting'
       }
     ];
   };
@@ -38,7 +39,7 @@
     }
   });
 
-  angular.module('angular-seo')
+  angular.module('lithograph')
     .controller('MenuCtrl', MenuCtrl);
 
 }());
